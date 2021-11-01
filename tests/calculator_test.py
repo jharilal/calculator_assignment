@@ -1,4 +1,6 @@
-from calculator.calc_body import Calculator
+"""Testing the Calculator class"""
+
+from calculator.main import Calculator
 
 
 def test_adding():

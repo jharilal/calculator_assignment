@@ -1,4 +1,8 @@
+"""Creating a calculator"""
+
+
 class Calculator:
+    """Initiates a calculator that stores a value"""
 
     value = 0
 
@@ -19,5 +23,7 @@ class Calculator:
 
     def dividing(self, value_a):
         """Divides a value against the calculator"""
+        if value_a == 0:
+            return ZeroDivisionError
         self.value = self.value / value_a
         return self.value
