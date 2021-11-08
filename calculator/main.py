@@ -1,4 +1,4 @@
-"""Creating a calculator"""
+"""Using operation and history functions to build a calculator that can store calculations"""
 from calculator.operations.addition import Addition
 from calculator.operations.subtraction import Subtraction
 from calculator.operations.multiplication import Multiplication
