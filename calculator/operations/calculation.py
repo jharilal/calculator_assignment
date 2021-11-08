@@ -4,12 +4,14 @@
 class Calculation:
     """Creates the Calculation parent class for the arithmetic subclasses"""
     # pylint: disable=bad-option-value, too-few-public-methods
-    def __init__(self, value_a, value_b):
-        self.value_a = value_a
-        self.value_b = value_b
+    def __init__(self, values: tuple):
+        """Constructor Method"""
+        self.values = Calculation.convert_to_float(values)
 
-    @classmethod
-    def create(cls, value_a, value_b):
-        """Creates an object. Will be used for the subclasses
-         to create an object of the function type"""
-        return cls(value_a, value_b)
+    @staticmethod
+    def convert_to_float(values):
+        """Converts the values passed to function into float values in a list"""
+        list_of_floats = []
+        for item in values:
+            list_of_floats.append(float(item))
+        return list_of_floats

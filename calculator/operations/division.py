@@ -7,6 +7,12 @@ class Division(Calculation):
     """Creates the division object for the Calculator class"""
     def get_result(self):
         """Gets the result of the division object"""
-        if self.value_b == 0:
-            return ZeroDivisionError
-        return self.value_a / self.value_b
+        total_divide = self.values[0]
+        for index, item in enumerate(self.values):
+            if item == 0:
+                return ZeroDivisionError
+            if index > 0:
+                total_divide /= item
+            else:
+                continue
+        return total_divide

@@ -7,4 +7,7 @@ class Subtraction(Calculation):
     """Creates the subtraction object for the Calculator class"""
     def get_result(self):
         """Gets the result of the subtraction object"""
-        return self.value_a - self.value_b
+        total_sub = 0
+        for item in self.values:
+            total_sub -= item
+        return total_sub

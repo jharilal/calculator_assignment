@@ -10,29 +10,29 @@ class Calculator:
     """Initiates a calculator that stores a value"""
 
     @staticmethod
-    def adding(value_a, value_b):
+    def adding(*args):
         """Adds a value to the calculator"""
-        addition = Addition.create(value_a, value_b)
+        addition = Addition(args)
         History.append_to_history(addition)
         return History.last_result()
 
     @staticmethod
-    def subtracting(value_a, value_b):
+    def subtracting(*args):
         """Subtracts a value to the calculator"""
-        subtraction = Subtraction.create(value_a, value_b)
+        subtraction = Subtraction(args)
         History.append_to_history(subtraction)
         return History.last_result()
 
     @staticmethod
-    def multiplying(value_a, value_b):
+    def multiplying(*args):
         """Multiplies a value to the calculator"""
-        multiplication = Multiplication.create(value_a, value_b)
+        multiplication = Multiplication(args)
         History.append_to_history(multiplication)
         return History.last_result()
 
     @staticmethod
-    def dividing(value_a, value_b):
+    def dividing(*args):
         """Divides a value against the calculator"""
-        division = Division.create(value_a, value_b)
+        division = Division(args)
         History.append_to_history(division)
         return History.last_result()

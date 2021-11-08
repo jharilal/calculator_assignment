@@ -7,4 +7,7 @@ class Multiplication(Calculation):
     """Creates the multiplication object for the Calculator class"""
     def get_result(self):
         """Gets the result of the multiplication object"""
-        return self.value_a * self.value_b
+        total_mult = 1
+        for item in self.values:
+            total_mult *= item
+        return total_mult
