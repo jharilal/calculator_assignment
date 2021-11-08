@@ -1,6 +1,6 @@
 """Addition method that inherits value_a and value_b from the calculation class"""
 
-from calc_history.calculation import Calculation
+from calculator.operations.calculation import Calculation
 
 
 class Addition(Calculation):
