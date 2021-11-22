@@ -1,4 +1,8 @@
 """Holds the history class and history operations for the calculator"""
+from calculator.operations.addition import Addition
+from calculator.operations.subtraction import Subtraction
+from calculator.operations.multiplication import Multiplication
+from calculator.operations.division import Division
 
 
 class History:
@@ -45,4 +49,28 @@ class History:
     def clear_history():
         """Removes all calculations from the calculation history"""
         History.history = []
+        return True
+
+    @staticmethod
+    def addition_calculation(values):
+        """Creates an addition calculation object"""
+        History.append_to_history(Addition.create(values))
+        return True
+
+    @staticmethod
+    def subtraction_calculation(values):
+        """Creates an addition calculation object"""
+        History.append_to_history(Subtraction.create(values))
+        return True
+
+    @staticmethod
+    def multiplication_calculation(values):
+        """Creates an addition calculation object"""
+        History.append_to_history(Multiplication.create(values))
+        return True
+
+    @staticmethod
+    def division_calculation(values):
+        """Creates an addition calculation object"""
+        History.append_to_history(Division.create(values))
         return True

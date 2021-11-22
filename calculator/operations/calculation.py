@@ -8,10 +8,17 @@ class Calculation:
         """Constructor Method"""
         self.values = Calculation.convert_to_float(values)
 
+    @classmethod
+    def create(cls, values: tuple):
+        """Creates an object"""
+        return cls(values)
+
     @staticmethod
     def convert_to_float(values):
         """Converts the values passed to function into float values in a list"""
         list_of_floats = []
         for item in values:
             list_of_floats.append(float(item))
-        return list_of_floats
+        return tuple(list_of_floats)
+
+
