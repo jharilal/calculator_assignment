@@ -1,29 +1,30 @@
-"""Creating a calculator"""
+"""Using operation and history functions to build a calculator that can store calculations"""
+from calculator.history.calculation_history import History
 
 
 class Calculator:
     """Initiates a calculator that stores a value"""
 
-    value = 0
-
-    def adding(self, value_a):
+    @staticmethod
+    def adding(*args):
         """Adds a value to the calculator"""
-        self.value = self.value + value_a
-        return self.value
+        History.addition_calculation(*args)
+        return History.last_result()
 
-    def subtracting(self, value_a):
+    @staticmethod
+    def subtracting(*args):
         """Subtracts a value to the calculator"""
-        self.value = self.value - value_a
-        return self.value
+        History.subtraction_calculation(*args)
+        return History.last_result()
 
-    def multiplying(self, value_a):
+    @staticmethod
+    def multiplying(*args):
         """Multiplies a value to the calculator"""
-        self.value = self.value * value_a
-        return self.value
+        History.multiplication_calculation(*args)
+        return History.last_result()
 
-    def dividing(self, value_a):
+    @staticmethod
+    def dividing(*args):
         """Divides a value against the calculator"""
-        if value_a == 0:
-            return ZeroDivisionError
-        self.value = self.value / value_a
-        return self.value
+        History.division_calculation(*args)
+        return History.last_result()
