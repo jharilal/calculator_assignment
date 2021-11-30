@@ -10,5 +10,5 @@ class Multiplication(Calculation):
         total_mult = 1
         for item in self.values:
             total_mult *= item
-        return total_mult
+        return round(total_mult, 2)
 
