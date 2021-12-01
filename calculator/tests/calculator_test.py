@@ -15,12 +15,13 @@ def clear_history():
 
 
 def row_to_tup(row):
+    """Converts the values within a row into a tuple"""
     return row['value_a'], row['value_b'], row['value_c']
 
 
 def test_adding(clear_history):
     """Tests the adding function of the calculator class"""
-    # pylint: disable=redefined-outer-name, unused-argument
+    # pylint: disable=redefined-outer-name, unused-argument, unused-variable
     test_file_name = 'adding_long.csv'
     csv_loc = CsvRead.search_csv(test_file_name)
     df_two = CsvRead.csv_to_df(csv_loc)
@@ -28,40 +29,40 @@ def test_adding(clear_history):
         tup = row_to_tup(row)
         test_value = Calculator.adding(tup)
         LogWrite.add_to_log(test_file_name)
-        assert test_value == row['result']  # Testing the long csv for adding
+        assert test_value == row['result']
     FileOperator.move_to_destination(csv_loc)
 
 
 
 def test_subtracting(clear_history):
     """Tests the subtracting function of the calculator class"""
-    # pylint: disable=redefined-outer-name, unused-argument
+    # pylint: disable=redefined-outer-name, unused-argument, unused-variable
     test_file_name = 'subtracting_long.csv'
     csv_loc = CsvRead.search_csv(test_file_name)
     df_two = CsvRead.csv_to_df(csv_loc)
     for index, row in df_two.iterrows():
         tup = row_to_tup(row)
-        assert Calculator.subtracting(tup) == row['result']     # Testing the long csv for subtraction
+        assert Calculator.subtracting(tup) == row['result']
         LogWrite.add_to_log(test_file_name)
     FileOperator.move_to_destination(csv_loc)
 
 
 def test_multiplying(clear_history):
     """Tests the multiplying function of the calculator class"""
-    # pylint: disable=redefined-outer-name, unused-argument
+    # pylint: disable=redefined-outer-name, unused-argument, unused-variable
     test_file_name = 'multiplying_long.csv'
     csv_loc = CsvRead.search_csv(test_file_name)
     df_two = CsvRead.csv_to_df(csv_loc)
     for index, row in df_two.iterrows():
         tup = row_to_tup(row)
-        assert Calculator.multiplying(tup) == row['result']     # Testing the long csv for multiplication
+        assert Calculator.multiplying(tup) == row['result']
         LogWrite.add_to_log(test_file_name)
     FileOperator.move_to_destination(csv_loc)
 
 
 def test_dividing(clear_history):
     """Tests the dividing function of the calculator class"""
-    # pylint: disable=redefined-outer-name, unused-argument
+    # pylint: disable=redefined-outer-name, unused-argument, unused-variable
     test_file_name = 'dividing_long.csv'
     csv_loc = CsvRead.search_csv(test_file_name)
     df_two = CsvRead.csv_to_df(csv_loc)
@@ -71,12 +72,13 @@ def test_dividing(clear_history):
             assert Calculator.dividing(tup) == ZeroDivisionError
             LogWrite.add_to_zero_log(test_file_name)
         else:
-            assert Calculator.dividing(tup) == float(row['result'])  # Testing the short csv for division
+            assert Calculator.dividing(tup) == float(row['result'])
             LogWrite.add_to_log(test_file_name)
     FileOperator.move_to_destination(csv_loc)
 
 
 def test_complete_logs():
+    """Commits the logs to csvs and resets the dataframes"""
     CsvWrite.set_directory()
     LogWrite.commit_log()
     LogWrite.commit_zero_log()

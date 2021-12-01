@@ -20,5 +20,3 @@ class Calculation:
         for item in values:
             list_of_floats.append(float(item))
         return tuple(list_of_floats)
-
-

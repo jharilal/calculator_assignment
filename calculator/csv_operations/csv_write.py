@@ -1,6 +1,6 @@
 """This module will allow the calculator test to write a log file"""
-import pandas as pd
 import os
+import pandas as pd
 
 
 class CsvWrite:
@@ -13,5 +13,6 @@ class CsvWrite:
 
     @staticmethod
     def set_directory():
+        """Changes the directory to 'results' in order to commit the logs"""
         os.chdir('calculator/tests/results')
         return True

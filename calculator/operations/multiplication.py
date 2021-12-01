@@ -1,4 +1,5 @@
-"""Multiplication method that inherits value_a and value_b from the calculation class and multiplies the values"""
+"""Multiplication method that inherits value_a and value_b
+   from the calculation class and multiplies the values"""
 
 from calculator.operations.calculation import Calculation
 
@@ -11,4 +12,3 @@ class Multiplication(Calculation):
         for item in self.values:
             total_mult *= item
         return round(total_mult, 2)
-

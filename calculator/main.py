@@ -5,13 +5,13 @@ import pytest
 
 
 print('main.py will pytest for the calculator_test.py file')
-sleep(0.2)
+sleep(3)
 
 
 def main():
     """Runs the pytest program for the calculator"""
     print('Running pytest for calculator.py ...')
-    retcode = pytest.main(['-s', 'calculator/tests/calculator_test.py'])
+    retcode = pytest.main(['--pylint', 'calculator/tests/calculator_test.py'])
     print(retcode)
     print("Test complete")
 
