@@ -2,21 +2,17 @@
 
 from time import sleep
 import pytest
-from calculator.csv_operations.path_finder import abs_path_to_csv
-from calculator.csv_operations.csv_write import CsvWrite
-from calculator.csv_operations.log_write import LogWrite
 
-print('The purpose of this file is to test the calculator for functionality.')
+
+print('main.py will pytest for the calculator_test.py file')
+sleep(0.2)
 
 
 def main():
-
-
-    print("Converting log dataframe into csv...")
-    CsvWrite.df_to_csv(LogWrite.df)
-    sleep(3)
-    print("Resetting dataframe for new log...")
-    LogWrite.reset_df()
+    """Runs the pytest program for the calculator"""
+    print('Running pytest for calculator.py ...')
+    retcode = pytest.main(['-s', 'calculator/tests/calculator_test.py'])
+    print(retcode)
     print("Test complete")
 
 
