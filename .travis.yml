@@ -9,4 +9,4 @@ script:
 
 branches:
   only:
-    - part_3
+    - project_3_part_one_calculator
