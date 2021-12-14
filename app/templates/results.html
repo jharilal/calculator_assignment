@@ -9,8 +9,27 @@
 {% block content %}
 <div id="articleresults">
     <h1 class="headline_text">Results</h1>
-
-
-
+      <table id="data" class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Datetime</th>
+        <th>Tuple</th>
+        <th>Operation</th>
+        <th>Result</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for index, row in updated_results.iterrows(): %}
+        <tr>
+          <td>{{ index }}</td>
+          <td>{{ row['time'] }}</td>
+          <td>{{ row['tuple'] }}</td>
+          <td>{{ row['operation'] }}</td>
+          <td>{{ row['result'] }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 </div>
 {% endblock %}

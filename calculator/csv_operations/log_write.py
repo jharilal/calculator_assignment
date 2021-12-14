@@ -1,5 +1,6 @@
 """Writes CSV files utilizing pandas"""
-import time
+from datetime import datetime
+from pytz import timezone
 import pandas as pd
 from calculator.csv_operations.csv_read import CsvRead
 from calculator.csv_operations.csv_write import CsvWrite
@@ -32,7 +33,7 @@ class LogWrite:
     @staticmethod
     def get_time():
         """Returns the current unix time for a calculation"""
-        current_time = time.time()
+        current_time = (datetime.now(timezone('EST'))).strftime('%d-%b-%Y %I:%M:%S')
         return current_time
 
     @staticmethod
