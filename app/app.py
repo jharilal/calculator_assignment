@@ -1,9 +1,13 @@
 """A simple flask web app"""
-from flask import Flask, request
+from flask import Flask, request, flash
 from flask import render_template
-from calc.calculator import Calculator
+from calculator.data_cleaner.dataclean import DataClean
+from calculator.calculator import Calculator
+from calculator.csv_operations.log_write import LogWrite
+from calculator.history.calculation_history import History
 
 app = Flask(__name__)
+app.secret_key = 'ayyylmao2021'
 
 
 @app.route("/")
@@ -12,37 +16,53 @@ def index():
     return render_template('index.html')
 
 
-@app.route("/basicform", methods=['GET', 'POST'])
-def basicform():
+@app.route("/aaatesting", methods=['GET', 'POST'])
+def aaatesting():
+    return render_template('aaatesting.html')
+
+
+@app.route("/pylint", methods=['GET', 'POST'])
+def pylint():
+    return render_template('pylint.html')
+
+
+@app.route("/principles", methods=['GET', 'POST'])
+def principles():
+    return render_template('principles.html')
+
+
+@app.route("/solid", methods=['GET', 'POST'])
+def solid():
+    return render_template('solid.html')
+
+
+@app.route("/results", methods=['GET', 'POST'])
+def results():
+    return render_template('results.html')
+
+
+@app.route("/calculatorpage", methods=['GET', 'POST'])
+def calculatorpage():
     """Post Request Handling"""
     if request.method == 'POST':
         # get the values out of the form
-        value1 = request.form['value1']
-        value2 = request.form['value2']
+        values = request.form['values']
         operation = request.form['operation']
         # make the tuple
-        my_tuple = (value1, value2)
+        value_tuple = DataClean.data_process(values)
+        if value_tuple == ValueError:
+            flash('Invalid Input. Please enter numeric values separated by commas.', 'error')
+            return render_template('calculatorpage.html')
         # this will call the correct operation
-        getattr(Calculator, operation)(my_tuple)
-        result = str(Calculator.get_last_result_value())
-        return render_template('result.html', value1=value1, value2=value2, operation=operation, result=result)
+        getattr(Calculator, operation)(value_tuple)
+
+        # Create a new entry / add results to log
+        LogWrite.add_to_log(value_tuple)
+        # Write Log
+        # Display log
+        result = str(History.last_result())
+
+        return render_template('results.html', values=values, operation=operation, result=result)
     # Displays the form because if it isn't a post it is a get request
     else:
-        return render_template('basicform.html')
-
-
-@app.route("/bad/<value1>/<value2>")
-def bad_calc(value1, value2):
-    """bad calc Route Response"""
-    result = value1 + value2
-    response = "The result of the calculation is: " + result + '<a href="/"> back</a>'
-    return response
-
-
-@app.route("/good/<float:value1>/<float:value2>")
-def good_calc(value1, value2):
-    """good calc Route Response"""
-    my_tuple = (value1, value2)
-    Calculator.addition(my_tuple)
-    response = "The result of the calculation is: " + str(Calculator.get_last_result_value()) + '<a href="/"> back</a>'
-    return response
+        return render_template('calculatorpage.html')

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+        .important {
+            color: #336699;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+
+<div id="articlecalc">
+    <h1>Calculator</h1>
+    <div id="calculationbox">
+    <p id="values_instructions">Please input values separated by a comma </p>
+    <form action="/calculatorpage" method="POST">
+        <div id="valuesbox">
+        <input type="text" id="values" name="values" value="1"><br>
+        <input type="submit" id="calcbutton" value="Calculate">
+        </div>
+        <div id="operationsbox">
+        <fieldset>
+        <legend id="oper">Operation</legend>
+          <div>
+            <input type="radio" name="operation" id="addition" value="adding" checked>
+            <label for="addition">Adding</label>
+          </div>
+          <div>
+            <input type="radio" name="operation" id="subtraction" value="subtracting">
+            <label for="subtraction">Subtracting</label>
+          </div>
+          <div>
+            <input type="radio" name="operation" id="multiplication" value="multiplying">
+            <label for="multiplication">Multiplying</label>
+          </div>
+          <div>
+            <input type="radio" name="operation" id="division" value="dividing">
+            <label for="division">Dividing</label>
+          </div>
+        </fieldset>
+        </div>
+    </form>
+    </div>
+</div>
+{% endblock %}

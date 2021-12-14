@@ -13,5 +13,5 @@ class Division(Calculation):
                 try:
                     total_divide /= item
                 except ZeroDivisionError:
-                    return ZeroDivisionError
+                    return "ZeroDivisionError"
         return round(total_divide, 2)

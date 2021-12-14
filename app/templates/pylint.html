@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% block title %}pylint{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+        .important { color: #336699; }
+    </style>
+{% endblock %}
+{% block content %}
+<div id="articlepylint">
+        <h1 class="headline_text">Pylint</h1>
+        <div class="article_content">
+            <p>Code is an art form that allows for the communication between man and computer. As long as code follows
+                the syntax of the language, the computer will read it and understand it properly. However, in the
+                industrial world, the communication through code between individuals is also important. The way a code
+                is written and how it is presented is vital to becoming a successful programmer. Within the tech industry,
+                there are numerous reasons for an individual to write readable and clean code. There would be multiple
+                people on a team working on the same code. There are people will need to pick up where you left off. You may
+                even need to revisit the same code down the line. In essence, even if code works, it should be fit to a
+                universal standard in order to allow for effective  communication between people.</p>
+            <hr>
+            <p> In Python, users typically follow the PEP8 style-guide, but this can differ from company to company.
+                Pylint is a tool that aids in the unification of the python language and helps organize code in such a way
+                that follows the style-guide, and also can detect errors, but also make suggestions to write better code.
+                To begin the implementation, pylint first needs to be installed to the system, you can run the following
+                command in terminal:
+            </p>
+            <p class="code_text">pip install pylint</p>
+            <hr>
+            <p>When implementing Pylint to your program, you will have a ".pylintrc" which is essentially the readme for
+                Pylint. This document contains the style corrections Pylint will make along with how pylint will work and
+                what will be returned after running pylint.</p>
+            <hr>
+            <p>To run pylint, it is very simple. Simply follow the format below, and it will return a report for your python file!</p>
+            <p class="code_text">pylint your-python-file-here.py</p>
+            <hr>
+            <p>Here is an example of a pylint report. In the code below, we can see that I commented out the docstring of
+            the function, which is not up to PEP8 standards. We can also see that there is a pylint comment under that which
+            tells pylint not to report the following "errors".</p>
+            <img class="article_img" src="images/OOP/pylint-error-code.png" alt="some code that will cause a pylint error">
+            <p>And the report:</p>
+            <img class="article_img" src="images/OOP/pylint-error-report.png" alt="pylint report for the code above">
+            <p>As you can see, the report will locate exactly which line the error is on, and indicate why there is an issue.
+                In this case, as stated above, there is a missing docstring. In conclusion, use pylint to keep your code
+                clean, readable, and efficient!</p>
+        </div>
+        <hr>
+        <h1 class="headline_text">The OOP Glossary</h1>
+        <div class="article_content">
+            <p>This section contains important terms to retain if you are learning object oriented programming. Being able to
+            speak the language of OOP is vital to troubleshooting issues via google or stack overflow. Reference this page
+            if you ever need a reminder</p>
+            <hr>
+            <p class="glossary_word">Factory</p>
+            <p>A type of design pattern where a method would delegate object creation to another function. Utilizes the
+            "single responsibility principle" where each function has one purpose.</p>
+            <hr>
+            <p class="glossary_word">Instantiation</p>
+            <p>Creation of an object</p>
+            <hr>
+            <p class="glossary_word">Object</p>
+            <p>Collection of various data and methods to operate on the data</p>
+            <hr>
+            <p class="glossary_word">Class</p>
+            <p>An outline in order to instantiate an object</p>
+            <hr>
+            <p class="glossary_word">Namespace</p>
+            <p>System to ensure that all "names" used within a program or code is unique</p>
+            <hr>
+            <p class="glossary_word">Constructor</p>
+            <p>A method used to instantiate an object, and usually involves assigning values to the object</p>
+            <hr>
+            <p class="glossary_word">Fixture</p>
+            <p>Used within pytest, defines a consistent context for function tests</p>
+            <hr>
+            <p class="glossary_word">Type Hint</p>
+            <p>A static indicator to inform what type is accepted within a function or method </p>
+            <hr>
+            <p class="glossary_word">Unit Test</p>
+            <p>Testing the individual components of a program</p>
+            <hr>
+            <p class="glossary_word">Static</p>
+            <p>A variable that is declared within a class, but outside a method. Is not directly attached to object creation</p>
+            <hr>
+            <p class="glossary_word">Class Method</p>
+            <p>A method that is bound to the class, but not the object of a class. Similar to static, except is a method.</p>
+            <hr>
+            <p class="glossary_word">Facade</p>
+            <p>A design pattern where a class would contain very simplified interface, and call to other complex functions
+                behind the facade.</p>
+            <hr>
+            <p class="glossary_word">Design Patterns</p>
+            <p>A template on how to solve a problem within programming. In this course, the factory method and is utilized
+                in conjunction
+            with the facade.</p>
+            <hr>
+            <p class="glossary_word">Method</p>
+            <p>A function that is associated with a class or object</p>
+            <hr>
+            <p class="glossary_word">Property</p>
+            <p>The attributes that characterize a class</p>
+            <hr>
+        </div>
+    </div>
+{% endblock %}

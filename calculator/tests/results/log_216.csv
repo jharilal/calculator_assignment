@@ -1,4 +1,4 @@
-id,time,operation,result,filename
+id,time,tuple,operation,result
 0,1638376911.943374,<class 'calculator.operations.addition.Addition'>,8.0,adding_long.csv
 1,1638376911.9460816,<class 'calculator.operations.addition.Addition'>,11.0,adding_long.csv
 2,1638376911.948072,<class 'calculator.operations.addition.Addition'>,14.0,adding_long.csv

@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block title %}aaatesting{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+        .important { color: #336699; }
+    </style>
+{% endblock %}
+{% block content %}
+<!--    {% with messages = get_flashed_messages() %}-->
+<!--        {% if messages %}-->
+<!--            {% for msg in messages %}-->
+<!--                <p>{{msg}}</p>-->
+<!--            {% endfor %}-->
+<!--        {% endif %}-->
+<!--    {% endwith %}-->
+   <div id="articleaaatesting">
+        <h1 class="headline_text">AAA Testing</h1>
+        <div class="article_content">
+            <p>Testing your code as you work is crucial for becoming an excellent developer. No one can write an entire
+            program in one shot without errors, so testing along the way will help build working components in code, and
+            help reduce the amount of bugs encountered. Unit testing and checking each working part of the code is crucial
+            to writing a scalable code, because if something goes wrong along the way, or a function does not perform properly
+            at a particular threshold, a unit test would be able to pinpoint exactly where there is an issue and this leads to
+            easier and more effective debugging. The AAA unit test is a popular form of the unit test that I will walk you
+            through below!</p>
+            <hr>
+            <p>AAA testing is an acronym for <i>Arrange, Act, Assert</i>. These are the steps to develop an effective
+            unit test for your code.<br><br>
+            <b>Arrange - </b> involves the construction of the test case. This is where you set up the situation and
+            parameters needed to test a function or method.<br><br>
+            <b>Act - </b> is executing the target behavior of the test case. Utilizing the arrangement from the previous
+            step, <i>Act</i> involves performing the action that is being tested.<br><br>
+            <b>Assert </b>- is the act of confirming expected outcomes. This step takes the result from the <i>Act</i> step
+             and tests it against the expected outcome</p>
+            <hr>
+            <p>Refer to this picture below to see how it's done!</p>
+            <img class="article_img" src="images/OOP/addition_method.png" alt="The addition method from the calculator">
+            <p>This addition function adds a tuple of numbers and stores it to the history. This is the <i>facade</i> of
+            the calculator so the actual calculation, the object creation, and storing the value in the history is hidden
+            behind the scenes. But regardless, this function is supposed to return the sum of the values. Below is the
+            AAA style unit test for the addition function.</p>
+            <img class="article_img" src="images/OOP/aaa_test.png" alt="The AAA test for the addition method">
+            <p>As we can see, all the steps come together to form one cohesive test. The first line where the tuple is created
+                would be the <i>Arrange</i> step where data is being set up to perform the test. The second step is <i>Act</i>
+            where the main action is performed. The addition function is called and the <i>result</i> variable is set to
+            the result of the method. Finally in the last step, the <i>Assertion</i> is made where we know the expected result,
+            and we are making sure that the method returns the expected result. In this case, 3 + 4 + 5 = 12.<p>
+            <hr>
+            <h1 class="subheadline">Testing Using external Data</h1>
+            <p>An important aspect to testing your code is making sure that it is suitable to handle copious amounts of data
+            when it scales up. In this example, we use pandas to supply csv files containing data that will test each of
+            the operations. To demonstrate how to accomplish this, I will be using the pandas python package, and demonstrate
+            how to test with csvs using the "test_subtracting method"</p>
+            <hr>
+            <p>First, we need to set up our csv files. Below, we can see that I have used Excel to create 4 columns containing
+            three different values, and a result column containing the difference of the values. Once we have this sheet,
+            we can put it into our project folder.</p>
+            <img id="csv_table" src="images/OOP/subtracting_csv.png" alt="a csv of values and their differences">
+            <p>Once we have our csv prepared, we can start writing our method to create a pandas dataframe. Here, I've made
+            a class called "CsvRead" that specifically holds the task  to read a csv files, and it takes a filepath as an input.
+            The pandas module has a method called "read_csv" which makes this task easy to accomplish.</p>
+            <img class="article_img" src="images/OOP/read_csv_method.png" alt="the read csv method of csvread">
+            <p>Below, I'm testing this method and making sure that it prints out the data frame we expected. For this,
+            I want to assure that I can access the values within the dataframe, so I print out the 'value_a' item from
+            each row. This is not a formal test where we assert against a value, but a test to make sure that we can
+            visually see what is being printed out</p>
+            <p><i>Note: Use pytest -s to allow print statements to  print out their expected expressions</i></p>
+            <img class="article_img" src="images/OOP/read_csv_test.png" alt="test for readcsv function">
+            <p>Now we are ready to apply this method! I import the class into the calculator_test.py file
+            set up the test_subtracting function in a way so that we can read the csv file. We use panda methods to
+            iterate through the rows and create our tuple fro the values of the csv, and then assert it against the result
+            column of the csv.</p>
+            <img class="article_img" src="images/OOP/test_sub_method.png" alt="pytest result for test_subtracting">
+            <p>And just like that, we have a fully functional test utilizing external data!</p>
+            <img class="article_img" src="images/OOP/subtracting_pytest.png" alt="pytest for subtracting">
+            <hr>
+        </div>
+    </div>
+
+{% endblock %}

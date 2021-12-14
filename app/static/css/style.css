@@ -1,3 +1,177 @@
-body {
-    font-size: 200%;
+.wrapper {
+			width: 960px;
+			margin-left: auto;
+			margin-right: auto;
+			background-color: peachpuff;
+		}
+#hero-image {
+			background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+			url("oop_dashboard.jpg");
+			width: 100%;
+			object-fit: cover;
+			padding-left: 0;
+			padding-right: 0;
+			height: 400px;
+			float: left;
+		}
+#hero-text{
+			font-family: Helvetica;
+			line-height: 20px;
+			text-align: center;
+			position: relative;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			color: white;
+		}
+#icon{
+			padding-left: 20px;
+			padding-right: 10px;
+			width: 80px;
+			float: left;
+			color: navy;
+		}
+#primary_links {
+			float: right;
+			font-size: 19px;
+			line-height: 90px;
+			padding-right: 20px;
+		}
+#internet_title {
+			float: left;
+			line-height: 80px;
+			font-size: 31px;
+			font-family: Helvetica;
+		}
+.banner{
+			padding-top: 20px;
+			margin-top: 0px;
+			margin-bottom: 8px;
+			height: 80px;
+			background-color: mintcream;
+		}
+#sub-background{
+			height: 300px;
+			background-color: mintcream;
+		}
+#footer{
+			float: none;
+			padding-bottom: 10px;
+			width: 100%;
+			margin-top: 15px;
+			text-align: center;
+		}
+#validator{
+			width: 100%;
+			text-align: center;
+			float: none;
+		}
+#articlepylint{
+            height: 3000px;
+            width: 892px;
+            margin: 20px 20px 20px 35px;
+            border: cornflowerblue solid 2px;
+            padding: 10px;
+            float: none;
+        }
+#articleaaatesting{
+            height: 3000px;
+            width: 892px;
+            margin: 20px 20px 20px 35px;
+            border: cornflowerblue solid 2px;
+            padding: 10px;
+            float: none;
+        }
+#articlesolid{
+            height: 3000px;
+            width: 892px;
+            margin: 20px 20px 20px 35px;
+            border: cornflowerblue solid 2px;
+            padding: 10px;
+            float: none;
+        }
+#articleprinciples{
+            height: 3000px;
+            width: 892px;
+            margin: 20px 20px 20px 35px;
+            border: cornflowerblue solid 2px;
+            padding: 10px;
+            float: none;
+        }
+#articlepylint{
+            height: 3000px;
+            width: 892px;
+            margin: 20px 20px 20px 35px;
+            border: cornflowerblue solid 2px;
+            padding: 10px;
+            float: none;
+        }
+#articlecalc{
+            height: 300px;
+            width: 892px;
+            margin: 20px 20px 20px 35px;
+            border: cornflowerblue solid 2px;
+            padding: 10px;
+            float: none;
+        }
+.headline_text{
+            width: 870px;
+            font-family: Helvetica;
+            padding: 10px 0px 20px 10px;
+            margin-bottom: 0px;
+            line-height: 40px;
+            object-fit: cover;
+        }
+.article_content{
+            margin: 0px;
+            text-align: justify;
+            font-size: 18px;
+            width: 870px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+.code_text{
+            font-size: 16px;
+            color: white;
+            background-color: #2e2928;
+            font-family: Courier;
+            padding-left: 10px;
+            line-height: 30px;
+        }
+.article_img{
+            width: 100%;
+        }
+.glossary_word{
+            font-weight: bold;
+            font-size: 20px;
+        }
+.headline_text{
+            width: 870px;
+            font-family: Helvetica;
+            padding: 10px 0px 20px 10px;
+            margin-bottom: 0px;
+            line-height: 40px;
+            object-fit: cover;
+        }
+#valuesbox{
+    padding-left: 257px;
+            float: left;
+            margin: 0px 20px 10px 10px;
+}
+#values_instructions{
+        text-align: center;
+}
+#operationsbox{
+            margin: 10px;
+}
+#calculationbox{
+            border: cornflowerblue solid 2px;
+            padding: 10px;
+            margin: 20px 0px 20px 0px;
+}
+#calcbutton{
+    margin: 10px 0px 10px 108px;
+}
+#oper{
+    line-height: 30px;
 }
