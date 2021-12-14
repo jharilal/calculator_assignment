@@ -38,7 +38,9 @@ def solid():
 
 @app.route("/results", methods=['GET', 'POST'])
 def results():
-    return render_template('results.html')
+    updated_results = LogWrite.updated_log()
+    return render_template('results.html', tables=updated_results.to_html(classes='table table-striped text-center', justify='center'),
+                           titles=updated_results.columns.values)
 
 
 @app.route("/calculatorpage", methods=['GET', 'POST'])
@@ -62,7 +64,7 @@ def calculatorpage():
         # Display log
         result = str(History.last_result())
 
-        return render_template('results.html', values=values, operation=operation, result=result)
+        return render_template('results.html')
     # Displays the form because if it isn't a post it is a get request
     else:
         return render_template('calculatorpage.html')

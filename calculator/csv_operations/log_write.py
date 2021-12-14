@@ -9,7 +9,6 @@ from calculator.history.calculation_history import History
 class LogWrite:
     """Contains the methods to prepare a log in a pandas DataFrame"""
     df_to_read = pd.read_csv('calculator/csv_operations/csv_log/applog.csv')
-    x = 0
     session_df = pd.DataFrame(columns=['id', 'time', 'tuple', 'operation', 'result'])
     save_path = 'calculator/csv_operations/csv_log'
 
@@ -18,6 +17,11 @@ class LogWrite:
         row_of_log = pd.read_csv('calculator/csv_operations/csv_log/applog.csv')
         total_rows = row_of_log.shape[0]
         return total_rows
+
+    @staticmethod
+    def updated_log():
+        df_to_read = pd.read_csv('calculator/csv_operations/csv_log/applog.csv', index_col='id')
+        return df_to_read
 
     @staticmethod
     def get_id():

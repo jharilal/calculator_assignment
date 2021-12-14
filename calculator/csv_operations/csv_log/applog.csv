@@ -4,3 +4,4 @@ id,time,tuple,operation,result
 2,1639504600.3660178,"(5.0, 0.0)",Division,ZeroDivisionError
 3,1639505425.0697136,"(0.0,)",Addition,0.0
 4,1639506042.7783566,"(1.0, 5.0, 2.0)",Addition,8.0
+5,1639507585.7584546,"(12.0,)",Addition,12.0

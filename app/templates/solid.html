@@ -22,7 +22,7 @@
             it's easier to organize and alter tasks as the needs of program change, and expand. In the Calculator program,
             we can see how single responsibility principle is used by looking at any of our operation classes. Below is
             the multiplication class.</p>
-            <img class="article_img" src="images/OOP/mult_class.png" alt="multiplication class of the calculator">
+            <img class="article_img" src="{{url_for('static', filename='images/mult_class.png')}}" alt="multiplication class of the calculator">
             <p>Here we can see that this class is solely responsible for creating the multiplication object, and storing
             the values passed to it from the Calculation function. If the get_result method is called, then it will return
             the product of the values.</p>
@@ -33,7 +33,7 @@
             altering existing code. This improves scalability since the entire code does not need to be reviewed upon making
             a change, and reduces the probability of bugs. This code demonstrates the open-closed principle through the
             calculation class of the calculator.</p>
-            <img class="article_img" src="images/OOP/ocp_calculation.png" alt="the facade of the calculator program">
+            <img class="article_img" src="{{url_for('static', filename='images/ocp_calculation.png')}}" alt="the facade of the calculator program">
             <p>Let's say that we wanted to add another function to the calculator called power. To do so, we would need
             to extend the facade to add the power calculation that calls to the history, and from the history calls to the
             power class, which is a subset of the calculation class, as the other operations are. Adding the power class
@@ -47,8 +47,8 @@
             passed to it from the parent class. This is important because it prevents hard-to-track bugs from occurring,
             and it ensures that the parent class is generic enough to be reusable with other child classes. In the calculator
             program, we can see this principle used between the calculation class and any of the subclasses.</p>
-            <img class="article_img" src="images/OOP/ocp_calculation.png" alt="the facade of the calculator program">
-            <img class="article_img" src="images/OOP/inheritance_addition_class.png" alt="the facade of the calculator program">
+            <img class="article_img" src="{{url_for('static', filename='images/ocp_calculation.png')}}" alt="the facade of the calculator program">
+            <img class="article_img" src="{{url_for('static', filename='images/inheritance_addition_class.png')}}" alt="the facade of the calculator program">
             <p>Here, we can see that the Addition methods makes use of all the qualities of the Calculation class:</p>
                 <ul>The addition class uses the "create" method to create an addition object</ul>
                 <ul>The values passed to the parent are converted to a list that is saved to the Addition object</ul>
@@ -90,7 +90,7 @@
             program by the lack of "if" statements testing against a data type. Specifically, we can see this in the history
                 class and how it utilizes abstraction to be robust.
             </p>
-            <img class="article_img" src="images/OOP/di.png" alt="operation calculations by the history class">
+            <img class="article_img" src="{{url_for('static', filename='images/di.png')}}" alt="operation calculations by the history class">
             <p>As we can see, these functions of the history class demonstrate abstraction, and the dependency inversion
             principle. They satisfy a single task, appending a specific operation to the calculation history list, but also
             are open to change. If the operations were to change how they function; like instead of passing an object, they

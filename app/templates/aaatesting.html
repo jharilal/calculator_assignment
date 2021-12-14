@@ -7,13 +7,7 @@
     </style>
 {% endblock %}
 {% block content %}
-<!--    {% with messages = get_flashed_messages() %}-->
-<!--        {% if messages %}-->
-<!--            {% for msg in messages %}-->
-<!--                <p>{{msg}}</p>-->
-<!--            {% endfor %}-->
-<!--        {% endif %}-->
-<!--    {% endwith %}-->
+
    <div id="articleaaatesting">
         <h1 class="headline_text">AAA Testing</h1>
         <div class="article_content">
@@ -35,12 +29,12 @@
              and tests it against the expected outcome</p>
             <hr>
             <p>Refer to this picture below to see how it's done!</p>
-            <img class="article_img" src="images/OOP/addition_method.png" alt="The addition method from the calculator">
+            <img class="article_img" src="{{url_for('static', filename='images/addition_method.png')}}" alt="The addition method from the calculator">
             <p>This addition function adds a tuple of numbers and stores it to the history. This is the <i>facade</i> of
             the calculator so the actual calculation, the object creation, and storing the value in the history is hidden
             behind the scenes. But regardless, this function is supposed to return the sum of the values. Below is the
             AAA style unit test for the addition function.</p>
-            <img class="article_img" src="images/OOP/aaa_test.png" alt="The AAA test for the addition method">
+            <img class="article_img" src="{{url_for('static', filename='images/aaa_test.png')}}" alt="The AAA test for the addition method">
             <p>As we can see, all the steps come together to form one cohesive test. The first line where the tuple is created
                 would be the <i>Arrange</i> step where data is being set up to perform the test. The second step is <i>Act</i>
             where the main action is performed. The addition function is called and the <i>result</i> variable is set to
@@ -56,24 +50,24 @@
             <p>First, we need to set up our csv files. Below, we can see that I have used Excel to create 4 columns containing
             three different values, and a result column containing the difference of the values. Once we have this sheet,
             we can put it into our project folder.</p>
-            <img id="csv_table" src="images/OOP/subtracting_csv.png" alt="a csv of values and their differences">
+            <img id="sub_csv_table" src="{{url_for('static', filename='images/subtracting_csv.png')}}" alt="a csv of values and their differences">
             <p>Once we have our csv prepared, we can start writing our method to create a pandas dataframe. Here, I've made
             a class called "CsvRead" that specifically holds the task  to read a csv files, and it takes a filepath as an input.
             The pandas module has a method called "read_csv" which makes this task easy to accomplish.</p>
-            <img class="article_img" src="images/OOP/read_csv_method.png" alt="the read csv method of csvread">
+            <img class="article_img" src="{{url_for('static', filename='images/read_csv_method.png')}}" alt="the read csv method of csvread">
             <p>Below, I'm testing this method and making sure that it prints out the data frame we expected. For this,
             I want to assure that I can access the values within the dataframe, so I print out the 'value_a' item from
             each row. This is not a formal test where we assert against a value, but a test to make sure that we can
             visually see what is being printed out</p>
             <p><i>Note: Use pytest -s to allow print statements to  print out their expected expressions</i></p>
-            <img class="article_img" src="images/OOP/read_csv_test.png" alt="test for readcsv function">
+            <img class="article_img" src="{{url_for('static', filename='images/read_csv_test.png')}}" alt="test for readcsv function">
             <p>Now we are ready to apply this method! I import the class into the calculator_test.py file
             set up the test_subtracting function in a way so that we can read the csv file. We use panda methods to
             iterate through the rows and create our tuple fro the values of the csv, and then assert it against the result
             column of the csv.</p>
-            <img class="article_img" src="images/OOP/test_sub_method.png" alt="pytest result for test_subtracting">
+            <img class="article_img" src="{{url_for('static', filename='images/test_sub_method.png')}}" alt="pytest result for test_subtracting">
             <p>And just like that, we have a fully functional test utilizing external data!</p>
-            <img class="article_img" src="images/OOP/subtracting_pytest.png" alt="pytest for subtracting">
+            <img class="article_img" src="{{url_for('static', filename='images/subtracting_pytest.png')}}" alt="pytest for subtracting">
             <hr>
         </div>
     </div>

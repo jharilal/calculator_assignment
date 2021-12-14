@@ -7,7 +7,7 @@
     </style>
 {% endblock %}
 {% block content %}
-<div id="articlepylint">
+<div id="article_pylint">
         <h1 class="headline_text">Pylint</h1>
         <div class="article_content">
             <p>Code is an art form that allows for the communication between man and computer. As long as code follows
@@ -37,9 +37,9 @@
             <p>Here is an example of a pylint report. In the code below, we can see that I commented out the docstring of
             the function, which is not up to PEP8 standards. We can also see that there is a pylint comment under that which
             tells pylint not to report the following "errors".</p>
-            <img class="article_img" src="images/OOP/pylint-error-code.png" alt="some code that will cause a pylint error">
+            <img class="article_img" src="{{url_for('static', filename='images/pylint-error-code.png')}}" alt="some code that will cause a pylint error">
             <p>And the report:</p>
-            <img class="article_img" src="images/OOP/pylint-error-report.png" alt="pylint report for the code above">
+            <img class="article_img" src="{{url_for('static', filename='images/pylint-error-report.png')}}" alt="pylint report for the code above">
             <p>As you can see, the report will locate exactly which line the error is on, and indicate why there is an issue.
                 In this case, as stated above, there is a missing docstring. In conclusion, use pylint to keep your code
                 clean, readable, and efficient!</p>
