@@ -2,7 +2,7 @@
 
 ### Beautiful tables
 
-![ScreenShot](https://raw.github.com/jharilal/calculator_assignment/project_3_final/screenshots/beautiful_table.png)
+![ScreenShot](https://raw.github.com/jharilal/calculator_assignment/project_3_final/screenshots/beautifultable.png)
 
 ### Passing Tests
 
